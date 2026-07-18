@@ -6,11 +6,12 @@ services:
     dockerContext: ./backend
     plan: free
     healthCheckPath: /actuator/health
+    region: oregon
     envVars:
       - key: DB_HOST
         fromDatabase:
           name: trailbook-db
-          property: host
+          property: hostExternal
       - key: DB_PORT
         fromDatabase:
           name: trailbook-db
