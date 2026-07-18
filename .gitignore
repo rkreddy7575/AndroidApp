@@ -1,0 +1,23 @@
+# Android
+android/.gradle/
+android/local.properties
+android/**/build/
+android/.idea/
+android/*.iml
+android/captures/
+android/.externalNativeBuild/
+android/.cxx/
+*.apk
+*.aab
+
+# Backend
+backend/target/
+backend/.env
+
+# General
+.DS_Store
+*.log
+.env
+.env.local
+.idea/
+.vscode/

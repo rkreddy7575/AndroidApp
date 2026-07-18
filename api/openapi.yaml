@@ -1,0 +1,25 @@
+openapi: 3.0.3
+info:
+  title: TrailBook API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/api/v1
+paths:
+  /auth/register:
+    post:
+      summary: Register a new user
+  /auth/login:
+    post:
+      summary: Login
+  /experiences/feed:
+    get:
+      summary: Paginated home feed
+  /experiences/search:
+    get:
+      summary: Search experiences
+  /experiences/{id}:
+    get:
+      summary: Get experience detail
+  /media/cloudinary-signature:
+    post:
+      summary: Get Cloudinary signed upload params

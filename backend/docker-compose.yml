@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: trailbook-postgres
+    environment:
+      POSTGRES_DB: trailbook
+      POSTGRES_USER: trailbook
+      POSTGRES_PASSWORD: trailbook
+    ports:
+      - "5432:5432"
+    volumes:
+      - trailbook_pg_data:/var/lib/postgresql/data
+
+volumes:
+  trailbook_pg_data:

@@ -1,0 +1,42 @@
+{
+  "info": {
+    "name": "TrailBook API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/auth/register",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"demo\",\n  \"email\": \"demo@trailbook.app\",\n  \"password\": \"Demo1234!\",\n  \"displayName\": \"Demo Explorer\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{baseUrl}}/auth/login",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"demo@trailbook.app\",\n  \"password\": \"Demo1234!\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Feed",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/experiences/feed?page=0&size=20"
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080/api/v1" }
+  ]
+}

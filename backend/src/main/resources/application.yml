@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: trailbook-backend
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/trailbook}
+    username: ${DATABASE_USERNAME:trailbook}
+    password: ${DATABASE_PASSWORD:trailbook}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+server:
+  port: ${PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+trailbook:
+  jwt:
+    secret: ${JWT_SECRET:trailbook-dev-secret-change-in-production-32chars}
+    refresh-secret: ${JWT_REFRESH_SECRET:trailbook-dev-refresh-secret-change-in-prod}
+    access-expiration-ms: 900000
+    refresh-expiration-ms: 604800000
+  cloudinary:
+    cloud-name: ${CLOUDINARY_CLOUD_NAME:demo}
+    api-key: ${CLOUDINARY_API_KEY:demo}
+    api-secret: ${CLOUDINARY_API_SECRET:demo}
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:*}
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    com.trailbook: INFO

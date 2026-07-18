@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:16-alpine:///trailbook
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+
+trailbook:
+  jwt:
+    secret: test-secret-at-least-32-characters-long
+    refresh-secret: test-refresh-secret-at-least-32-chars
+    access-expiration-ms: 900000
+    refresh-expiration-ms: 604800000
