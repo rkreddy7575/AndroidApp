@@ -2,9 +2,9 @@ spring:
   application:
     name: trailbook-backend
   datasource:
-    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/trailbook}
-    username: ${DATABASE_USERNAME:trailbook}
-    password: ${DATABASE_PASSWORD:trailbook}
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:trailbook}
+    username: ${DB_USER:trailbook}
+    password: ${DB_PASSWORD:trailbook}
   jpa:
     hibernate:
       ddl-auto: validate

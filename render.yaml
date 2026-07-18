@@ -7,10 +7,26 @@ services:
     plan: free
     healthCheckPath: /actuator/health
     envVars:
-      - key: DATABASE_URL
+      - key: DB_HOST
         fromDatabase:
           name: trailbook-db
-          property: connectionString
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: trailbook-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: trailbook-db
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: trailbook-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: trailbook-db
+          property: password
       - key: JWT_SECRET
         generateValue: true
       - key: JWT_REFRESH_SECRET
